@@ -53,7 +53,7 @@ export default function App() {
           <h3 className="muted small" style={{ marginTop: 8 }}>Some highlights</h3>
           <ul className="list" style={{ color: "#98a2b3" }}>
             <li>Built portfolio projects including a full-stack app and API-driven client app.</li>
-            <li>Always learning: from web development to analytics and ML.</li>
+            <li>Always learning: from web development to data analytics and machine learning.</li>
             <li>Strong teamwork/communication from roles in lifeguarding, fitness ops, and logistics.</li>
           </ul>
         </section>
