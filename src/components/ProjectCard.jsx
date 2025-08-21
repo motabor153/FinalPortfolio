@@ -44,23 +44,6 @@ export default function ProjectCard({
           ))}
         </ul>
       )}
-
-      <div className="proj-links">
-        {github && (
-          <a className="btn btn-small" href={github} target="_blank" rel="noreferrer">
-            GitHub
-          </a>
-        )}
-        {demo ? (
-          <a className="btn btn-small" href={demo} target="_blank" rel="noreferrer">
-            Live demo
-          </a>
-        ) : (
-          <button className="btn btn-small btn-ghost" title="Coming soon" disabled>
-            Live demo
-          </button>
-        )}
-      </div>
     </article>
   );
 }
