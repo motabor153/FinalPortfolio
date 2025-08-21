@@ -1,24 +1,44 @@
 import React from "react";
 import Nav from "./components/Nav.jsx";
 import Hero from "./components/Hero.jsx";
-import ProjectCard from "./components/ProjectCard.jsx"; // <- make sure this file exists
+import ProjectCard from "./components/ProjectCard.jsx";
 
 export default function App() {
   const NAME = "I'm Matthew Otabor";
   const INTRO =
     "I'm a UNC Charlotte Data Science student with full-stack development skills, Copilot Studio and Power Automate experience, and machine learning experience, passionate about using data to build creative and impactful solutions.";
 
-  // --- Projects ---
+  // --- Machine Learning projects ---
   const projects = [
     {
-      title: "Weather App",
+      title: "Customer Churn Prediction (Classification)",
       description:
-        "Fast weather dashboard with current conditions and a 5-day forecast. Built with React + Vite. Polishing error states and edge cases before going live.",
-      image: `${import.meta.env.BASE_URL}projects/weather/cover.png`, // optional screenshot; see note below
-      tags: ["React", "Vite", "OpenWeather API"],
+        "Predicts which customers are likely to churn using feature engineering and model comparison (LogReg, XGBoost). Includes interpretability (SHAP) and a simple evaluation dashboard.",
+      image: `${import.meta.env.BASE_URL}projects/ml/churn/cover.png`, // optional; shows skeleton if missing
+      tags: ["Python", "scikit-learn", "XGBoost", "AUC ~0.89"],
+      status: "Case study coming",
+      github: "https://github.com/matt0219/churn-classifier", // <- replace
+      demo: "" // optional if you host a report/app later
+    },
+    {
+      title: "Image Classifier — CIFAR-10 (CNN)",
+      description:
+        "Convolutional neural network trained on CIFAR-10 with augmentation and early stopping. Tracks experiments and compares checkpoints; exports confusion matrix and misclassifications.",
+      image: `${import.meta.env.BASE_URL}projects/ml/cifar10/cover.png`,
+      tags: ["Python", "PyTorch/TensorFlow", "CNN", "Acc ~86%"],
       status: "In progress",
-      github: "https://github.com/matt0219/weather-app", // replace with exact repo name if different
-      demo: "" // add a live URL later
+      github: "https://github.com/matt0219/cifar10-cnn", // <- replace
+      demo: ""
+    },
+    {
+      title: "House Price Prediction (Regression)",
+      description:
+        "End-to-end regression pipeline: data cleaning, feature scaling, model selection (Random Forest, XGBoost), cross-validation, and error analysis with partial dependence.",
+      image: `${import.meta.env.BASE_URL}projects/ml/housing/cover.png`,
+      tags: ["Python", "Pandas", "XGBoost", "RMSE TBD"],
+      status: "Completed",
+      github: "https://github.com/matt0219/housing-regression", // <- replace
+      demo: ""
     }
   ];
 
@@ -53,14 +73,14 @@ export default function App() {
           <h3 className="muted small" style={{ marginTop: 8 }}>Some highlights</h3>
           <ul className="list" style={{ color: "#98a2b3" }}>
             <li>Built portfolio projects including a full-stack app and API-driven client app.</li>
-            <li>Always learning: from web development to data analytics and machine learning.</li>
+            <li>Always learning: from web development to analytics and ML.</li>
             <li>Strong teamwork/communication from roles in lifeguarding, fitness ops, and logistics.</li>
           </ul>
         </section>
 
-        {/* Projects */}
+        {/* Machine Learning Projects */}
         <section id="projects">
-          <h2>Projects</h2>
+          <h2>Machine Learning Projects</h2>
           <div className="grid">
             {projects.map((p) => (
               <ProjectCard key={p.title} {...p} />
@@ -72,15 +92,12 @@ export default function App() {
         <section id="contact">
           <h2>Contact</h2>
           <p style={{ color: "#98a2b3" }}>
-            Email me at{" "}
-            <a href="mailto:motabor153@gmail.com">motabor153@gmail.com</a>.
+            Email me at <a href="mailto:motabor153@gmail.com">motabor153@gmail.com</a>.
           </p>
         </section>
       </main>
 
-      <footer className="container footer">
-        © {new Date().getFullYear()} {NAME}
-      </footer>
+      <footer className="container footer">© {new Date().getFullYear()} {NAME}</footer>
     </>
   );
 }
