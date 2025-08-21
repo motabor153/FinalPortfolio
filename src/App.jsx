@@ -19,16 +19,6 @@ export default function App() {
       status: "In progress",
       github: "https://github.com/matt0219/weather-app", // replace with exact repo name if different
       demo: "" // add a live URL later
-    },
-    {
-      title: "This Portfolio",
-      description:
-        "Dark, minimal portfolio with a pill nav, hero, and project grid. Built with React + Vite and custom CSS.",
-      image: `${import.meta.env.BASE_URL}projects/portfolio/cover.png`,
-      tags: ["React", "Vite", "CSS"],
-      status: "Ongoing",
-      github: "https://github.com/matt0219/PortfolioV2",
-      demo: "" // optional
     }
   ];
 
