@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 
-export default function Hero({
-  name,
-  intro,
-  ctaText = "Let’s get started →",
-  ctaHref = "#contact",
-}) {
+export default function Hero({ name, intro }) {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
 
-  // Points to /avatar.jpg in dev, /RepoName/avatar.jpg in GitHub Pages
+  // Points to /avatar.JPG in dev, /RepoName/avatar.JPG in GitHub Pages
   const photoSrc = `${import.meta.env.BASE_URL}avatar.JPG`;
 
   return (
@@ -20,9 +15,6 @@ export default function Hero({
           <div className="kicker">Welcome</div>
           <h1>{name}</h1>
           <p className="lead">{intro}</p>
-          <a className="btn" href={ctaHref}>
-            {ctaText}
-          </a>
 
           {/* Logo wall */}
           <div className="logo-wall">
