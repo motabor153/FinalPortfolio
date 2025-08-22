@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { LinkedInIcon, GitHubIcon, MailIcon } from "./icons.jsx";
 
 export default function Nav({ socials = {}, repoBase = "/" }) {
   const items = [
@@ -81,37 +82,26 @@ export default function Nav({ socials = {}, repoBase = "/" }) {
         <nav className="row" style={{ justifyContent: "space-between", width: "100%" }}>
           <div className="links row" style={{ gap: "6px" }}>
             {items.map((it) => (
-              <a key={it.label} href={it.href}>
-                {it.label}
-              </a>
+              <a key={it.label} href={it.href}>{it.label}</a>
             ))}
           </div>
           <div className="row" style={{ gap: "8px" }}>
             {socials.linkedin && (
-              <a
-                className="social"
-                href={socials.linkedin}
-                aria-label="LinkedIn"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span>in</span>
+              <a className="social" href={socials.linkedin} aria-label="LinkedIn" target="_blank" rel="noreferrer">
+                <LinkedInIcon />
+                <span className="sr-only">LinkedIn</span>
               </a>
             )}
             {socials.github && (
-              <a
-                className="social"
-                href={socials.github}
-                aria-label="GitHub"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span>GH</span>
+              <a className="social" href={socials.github} aria-label="GitHub" target="_blank" rel="noreferrer">
+                <GitHubIcon />
+                <span className="sr-only">GitHub</span>
               </a>
             )}
             {socials.email && (
               <a className="social" href={`mailto:${socials.email}`} aria-label="Email">
-                <span>@</span>
+                <MailIcon />
+                <span className="sr-only">Email</span>
               </a>
             )}
           </div>
