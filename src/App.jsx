@@ -8,37 +8,16 @@ export default function App() {
   const INTRO =
     "I'm a UNC Charlotte Data Science student with full-stack development skills, Copilot Studio and Power Automate experience, and machine learning experience, passionate about using data to build creative and impactful solutions.";
 
-  // --- Machine Learning projects ---
+  // --- Machine Learning: YouTube View Prediction (single project) ---
   const projects = [
     {
-      title: "Customer Churn Prediction (Classification)",
+      title: "YouTube View Prediction (Still in Development)",
       description:
-        "Predicts which customers are likely to churn using feature engineering and model comparison (LogReg, XGBoost). Includes interpretability (SHAP) and a simple evaluation dashboard.",
-      image: `${import.meta.env.BASE_URL}projects/ml/churn/cover.png`, // optional; shows skeleton if missing
-      tags: ["Python", "scikit-learn", "XGBoost", "AUC ~0.89"],
-      status: "Case study coming",
-      github: "https://github.com/matt0219/churn-classifier", // <- replace
-      demo: "" // optional if you host a report/app later
-    },
-    {
-      title: "Image Classifier — CIFAR-10 (CNN)",
-      description:
-        "Convolutional neural network trained on CIFAR-10 with augmentation and early stopping. Tracks experiments and compares checkpoints; exports confusion matrix and misclassifications.",
-      image: `${import.meta.env.BASE_URL}projects/ml/cifar10/cover.png`,
-      tags: ["Python", "PyTorch/TensorFlow", "CNN", "Acc ~86%"],
-      status: "In progress",
-      github: "https://github.com/matt0219/cifar10-cnn", // <- replace
-      demo: ""
-    },
-    {
-      title: "House Price Prediction (Regression)",
-      description:
-        "End-to-end regression pipeline: data cleaning, feature scaling, model selection (Random Forest, XGBoost), cross-validation, and error analysis with partial dependence.",
-      image: `${import.meta.env.BASE_URL}projects/ml/housing/cover.png`,
-      tags: ["Python", "Pandas", "XGBoost", "RMSE TBD"],
-      status: "Completed",
-      github: "https://github.com/matt0219/housing-regression", // <- replace
-      demo: ""
+        "Predicts video view counts from metadata and engagement features. Compared tree-based regressors (Random Forest, XGBoost, LightGBM); tuned Random Forest performed best. R² (coefficient of determination) measures how much of the variation in views the model explains: 1.0 is perfect, 0.0 means no better than predicting the mean, and negative means worse than that baseline. I used R² on a validation set to compare models fairly.",
+      image: `${import.meta.env.BASE_URL}R-squared.png`, // optional; shows skeleton if missing
+      caption: "R² on validation by model — Random Forest (tuned) ranked highest.",
+      tags: ["Python", "Scikit-Learn", "Random Forest", "Regression"],
+      demo: "" // optional if you host a notebook/report later
     }
   ];
 

@@ -5,7 +5,8 @@ export default function ProjectCard({
   tags = [],
   status = "",         // e.g. "In progress"
   github,              // e.g. "https://github.com/you/weather-app"
-  demo                 // optional live URL
+  demo,                // optional live URL
+  caption              // ← NEW: short line under the image
 }) {
   return (
     <article className="card project-card">
@@ -30,6 +31,9 @@ export default function ProjectCard({
           <span className="skel-text">Screenshot coming soon</span>
         </div>
       </div>
+
+      {/* NEW: image caption */}
+      {caption && <p className="small muted" style={{ marginTop: 6 }}>{caption}</p>}
 
       <header className="proj-head">
         <h3 className="proj-title">{title}</h3>
