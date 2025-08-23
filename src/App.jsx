@@ -18,7 +18,16 @@ export default function App() {
       caption: "R² on validation by model — Random Forest (tuned) ranked highest.",
       tags: ["Python", "Scikit-Learn", "Random Forest", "Regression"],
       demo: "" // optional if you host a notebook/report later
-    }
+    },
+    {
+      title: "DTSC Project 1 — Income & Risk Modeling (Finished School Project)",
+      description:
+        "The data we’ve analyzed contains 6 metrics from 48,842 individuals, recorded by the U.S. Census. Using the data about the individuals, a Support Vector Machine model was developed to predict whether an individual earned more than $50,000, or not",
+      image: `${import.meta.env.BASE_URL}dtsc1-cover.png`,
+      caption: "Data visualization showing comparison of models used",
+      tags: ["SVM-RBF", "Decision Tree", "Logistic Regression", "Classification"],
+      fit: "contain"
+    }    
   ];
 
   return (
