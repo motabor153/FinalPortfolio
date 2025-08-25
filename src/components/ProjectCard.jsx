@@ -3,32 +3,26 @@ export default function ProjectCard({
   description,
   image,               // e.g. `${import.meta.env.BASE_URL}chart.png`
   tags = [],
-  status = "",         // e.g. "In progress"
-  github,              // e.g. "https://github.com/you/repo" (unused for now)
-  demo,                // optional live URL (unused for now)
-  caption,             // short line under the image
-  fit = "cover",       // "cover" | "contain"
-  ratio = "16 / 9",    // keep uniform card height; can be "auto"
-  position = "center"  // e.g. "center top" if using cover
+  status = "",
+  github,
+  demo,
+  caption,
+  fit = "cover",
+  ratio = "16 / 9",
+  position = "center",
+  links = []           // <-- you already have this prop
 }) {
   return (
     <article className="card project-card">
       <div className="frame" style={{ aspectRatio: ratio }}>
         {status && <span className="pill">{status}</span>}
 
-        {/* Show image if available, otherwise skeleton */}
         {image ? (
           <img
             src={image}
             alt={`${title} screenshot`}
             loading="lazy"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: fit,        // key: use "contain" for full chart
-              objectPosition: position,
-              display: "block"
-            }}
+            style={{ width:"100%", height:"100%", objectFit:fit, objectPosition:position, display:"block" }}
             onError={(e) => {
               e.currentTarget.style.display = "none";
               const skel = e.currentTarget.closest(".frame")?.querySelector(".skeleton");
@@ -58,6 +52,27 @@ export default function ProjectCard({
           ))}
         </ul>
       )}
+
+      {/* NEW: link chips with download support */}
+{links.length > 0 && (
+  <div className="link-row">
+    {links.map((l) => {
+      const isDownload = !!l.download; // if provided, trigger download
+      return (
+        <a
+          key={l.label}
+          className="chip-link"
+          href={l.href}
+          {...(isDownload
+            ? { download: l.download }           // e.g. "dtsc1-notebook.ipynb"
+            : { target: "_blank", rel: "noreferrer" })}
+        >
+          {l.label}
+        </a>
+      );
+    })}
+  </div>
+)}
     </article>
   );
 }
