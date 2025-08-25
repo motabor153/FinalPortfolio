@@ -32,7 +32,20 @@ export default function App() {
         { label: "Notebook (.ipynb)", href: `${import.meta.env.BASE_URL}DTSC_Project1.ipynb`, download: "DTSC_Project1.ipynb" }
 
       ]
-    }    
+    },
+    {
+  title: "DTSC Project 2 — Public Safety Modeling (Finished School Project)",
+  description:
+    "Two tasks using Charlotte open data: (1) predict property loss from fire incidents (regression with engineered time/location features) and (2) predict homicide case clearance (classification). Explored Logistic Regression (with bagging), Decision Trees/Bagged Trees, Random Forest, XGBoost, kNN, and SVM (RBF).",
+  youtubeId: "https://youtu.be/hDBylXWHdVo",
+  caption: "Presentation recording",
+  tags: ["Logistic Regression", "Decision Tree", "Random Forest", "XGBoost", "SVM-RBF"],
+  fit: "contain",  // keep full chart visible if you add a thumbnail
+  links: [
+    { label: "Report (PDF)",      href: `${import.meta.env.BASE_URL}Project%202%20DTSC.pdf` },
+    { label: "Notebook (.ipynb)", href: `${import.meta.env.BASE_URL}project2.ipynb`, download: "project2.ipynb" }
+  ]
+}    
   ];
 
   return (
