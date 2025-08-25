@@ -26,7 +26,12 @@ export default function App() {
       image: `${import.meta.env.BASE_URL}dtsc1-cover.png`,
       caption: "Data visualization showing comparison of models used",
       tags: ["SVM-RBF", "Decision Tree", "Logistic Regression", "Classification"],
-      fit: "contain"
+      fit: "contain",
+      links: [
+        { label: "Report (PDF)", href: `${import.meta.env.BASE_URL}Project%201%20Report.pdf` },
+        { label: "Notebook (.ipynb)", href: `${import.meta.env.BASE_URL}DTSC_Project1.ipynb`, download: "DTSC_Project1.ipynb" }
+
+      ]
     }    
   ];
 
