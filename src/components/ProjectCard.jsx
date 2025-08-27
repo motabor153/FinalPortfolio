@@ -20,12 +20,12 @@ function extractYouTubeId(input) {
 export default function ProjectCard({
   title,
   description,
-  image,               // e.g. `${import.meta.env.BASE_URL}chart.png`
-  video,               // self-hosted video path (mp4/webm) in /public
-  poster,              // poster image for the <video>
-  youtubeId,           // legacy: still supported (ID)
-  youtube,             // NEW: ID or full YouTube URL
-  useNoCookie = true,  // NEW: toggle youtube-nocookie.com vs youtube.com
+  image,           // e.g. `${import.meta.env.BASE_URL}chart.png`
+  video,           // self-hosted video path (mp4/webm) in /public
+  poster,          // poster image for the <video>
+  youtubeId,       // legacy: still supported (ID)
+  youtube,         // NEW: ID or full YouTube URL
+  useNoCookie = true, // NEW: toggle youtube-nocookie.com vs youtube.com
   tags = [],
   status = "",
   github,
@@ -34,7 +34,7 @@ export default function ProjectCard({
   fit = "cover",
   ratio = "16 / 9",
   position = "center",
-  links = []           // chips rendered below
+  links = []       // chips rendered below
 }) {
   const skelRef = useRef(null);
   const showSkeleton = () => { if (skelRef.current) skelRef.current.style.display = "block"; };
@@ -46,6 +46,13 @@ export default function ProjectCard({
 
   return (
     <article className="card project-card">
+
+      {/* --- MOVED THIS SECTION UP --- */}
+      <header className="proj-head">
+        <h3 className="proj-title">{title}</h3>
+      </header>
+      {/* ----------------------------- */}
+
       <div className="frame" style={{ aspectRatio: ratio }}>
         {status && <span className="pill">{status}</span>}
 
@@ -96,9 +103,7 @@ export default function ProjectCard({
 
       {caption && <p className="small muted" style={{ marginTop: 6 }}>{caption}</p>}
 
-      <header className="proj-head">
-        <h3 className="proj-title">{title}</h3>
-      </header>
+      {/* --- The header was originally here --- */}
 
       <p className="small">{description}</p>
 

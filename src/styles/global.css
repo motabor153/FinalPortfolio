@@ -132,9 +132,14 @@ h1{ font-size: clamp(28px, 5vw, 48px); line-height:1.15; margin:6px 0 10px; }
 
 /* --- Projects --- */
 .project-card{ display:grid; gap:12px; }
-.proj-head{ display:flex; align-items:baseline; justify-content:space-between; }
+.proj-head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom: 8px; }
 .proj-title{ margin:0; font-size:18px; font-weight:700; }
 .proj-links{ display:flex; gap:8px; margin-top:6px; }
+
+.grid {
+  display: grid;
+  gap: 48px; /* This adds space between project cards. Adjust as you like! */
+}
 
 /* Screenshot frame with 16:9 aspect */
 .frame{
