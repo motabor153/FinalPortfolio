@@ -45,7 +45,21 @@ export default function App() {
     { label: "Report (PDF)",      href: `${import.meta.env.BASE_URL}Project%202%20DTSC.pdf` },
     { label: "Notebook (.ipynb)", href: `${import.meta.env.BASE_URL}project2.ipynb`, download: "project2.ipynb" }
   ]
-}    
+},
+{
+  title: "Data Mining Project 1 — Course Website",
+  description:
+    "Course project site summarizing data prep/EDA and model comparison with clear visuals and write-ups.",
+  image: `${import.meta.env.BASE_URL}project1datamine.png`, // or remove to show skeleton
+  caption: "Live site hosted on GitHub Pages. (Click screenshot to go to site)",
+  tags: ["HTML","Canva AI", "Data Mining"],
+  fit: "contain",
+  mediaHref: "https://motabor153.github.io/project1datamining/",
+  links: [
+    { label: "Live site", href: "https://motabor153.github.io/project1datamining/" },
+    { label: "Repo", href: "https://github.com/motabor153/project1datamining" } 
+  ]
+}
   ];
 
   return (
